@@ -1,6 +1,4 @@
 var contentnode = document.getElementById('contents');
-
-
 const ProductRow = (props) => (
     <tr>
         <td>{props.product.product}</td>
@@ -11,13 +9,16 @@ const ProductRow = (props) => (
 )
 
 
-class ProductAdd extends React.Component {
-    constructor() {
+class ProductAdd extends React.Component 
+{
+    constructor() 
+    {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(e) {
+    handleSubmit(e) 
+    {
         e.preventDefault();
         var form = document.forms.ProductAdd;
         this.props.createProduct({
@@ -32,7 +33,8 @@ class ProductAdd extends React.Component {
         form.image.value = "";
     }
 
-    render() {
+    render() 
+    {
         return (
             <div>
                 <form name="ProductAdd" onSubmit={this.handleSubmit}>
@@ -57,12 +59,13 @@ class ProductAdd extends React.Component {
                     <button>Add Product</button>
                 </form>
             </div>
-
         );
     }
 }
 
-function ProductTable(props) {
+
+function ProductTable(props) 
+{
     const productRows = props.products.map(product => <ProductRow key={product.id} product={product} />);
     return (
         <table className="bordered-table">
@@ -81,27 +84,31 @@ function ProductTable(props) {
     );
 }
 
-class ProductList extends React.Component {
 
-    constructor() {
+class ProductList extends React.Component 
+{
+    constructor() 
+    {
         super();
         this.state = { products: [] };
         this.createProduct = this.createProduct.bind(this);
     }
 
-
-    componentDidMount() {
+    componentDidMount() 
+    {
         document.forms.ProductAdd.price.value = '$';
     }
 
-    createProduct(newProduct) {
+    createProduct(newProduct) 
+    {
         const newProducts = this.state.products.slice();
         newProduct.id = this.state.products.length + 1;
         newProducts.push(newProduct);
         this.setState({ products: newProducts });
     }
 
-    render() {
+    render() 
+    {
         return (
             <div>
                 <h1>My Company Inventory</h1>
@@ -116,5 +123,6 @@ class ProductList extends React.Component {
         );
     }
 }
+
 
 ReactDOM.render(<ProductList />, contentnode);
