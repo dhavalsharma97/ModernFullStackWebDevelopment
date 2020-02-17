@@ -1,22 +1,41 @@
-table {
+body
+{
+    font-family: Calibri, Times New Roman, serif;
+    font-weight: bold;
+}
+
+button
+{
+    font-family: Calibri, Times New Roman, serif;
+    font-weight: bold;
+}
+
+table 
+{
     border-collapse: collapse;
-  }
+}
   
-  table, th, td {
+table, th, td 
+{
     border: 1px solid black;
-  }
+}
 
-  th,td{
-      padding: 5px;
-  }
+th,td
+{
+    padding: 5px;
+}
 
-  select,input{
-      width:100px;
-      height:25px ;
-      margin: 20px;
-  }
+select, input
+{
+    width:100px;
+    height:25px ;
+    margin: 20px;
+    font-family: Calibri, Times New Roman, serif;
+    font-weight: bold;
+}
 
-  label{
+label
+{
     display: inline-block;
     width: 100px;
-  }
+}
