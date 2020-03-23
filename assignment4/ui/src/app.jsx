@@ -6,7 +6,8 @@
 
 const contentnode = document.getElementById('contents');
 
-function ProductRow({ product }) {
+function ProductRow({ product }) 
+{
   return (
     <tr>
       <td>{product.Name}</td>
@@ -21,13 +22,16 @@ function ProductRow({ product }) {
 }
 
 
-class ProductAdd extends React.Component {
-  constructor() {
+class ProductAdd extends React.Component 
+{
+  constructor() 
+  {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit(e) 
+  {
     e.preventDefault();
     const form = document.forms.ProductAdd;
     const product = {
@@ -38,13 +42,14 @@ class ProductAdd extends React.Component {
     };
     const { createProduct } = this.props;
     createProduct(product);
-    // clearing the form for next inout
+    // Clearing the form for next input
     form.price.value = '$';
     form.product.value = '';
     form.image.value = '';
   }
 
-  render() {
+  render() 
+  {
     return (
       <div>
         <form name="ProductAdd" onSubmit={this.handleSubmit}>
@@ -81,12 +86,13 @@ class ProductAdd extends React.Component {
           <button type="submit">Add Product</button>
         </form>
       </div>
-
     );
   }
 }
 
-function ProductTable({ products }) {
+
+function ProductTable({ products }) 
+{
   const productRows = products.map(product => <ProductRow key={product.id} product={product} />);
   return (
     <table className="bordered-table">
@@ -105,20 +111,24 @@ function ProductTable({ products }) {
   );
 }
 
-class ProductList extends React.Component {
-  constructor() {
+
+class ProductList extends React.Component 
+{
+  constructor() 
+  {
     super();
     this.state = { products: [] };
     this.createProduct = this.createProduct.bind(this);
   }
 
-
-  componentDidMount() {
+  componentDidMount() 
+  {
     document.forms.ProductAdd.price.value = '$';
     this.loadData();
   }
 
-  async loadData() {
+  async loadData() 
+  {
     const query = `query{
             productList{
                 id Name Price Image Category
@@ -130,11 +140,13 @@ class ProductList extends React.Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query }),
     });
+
     const result = await response.json();
     this.setState({ products: result.data.productList });
   }
 
-  async createProduct(product) {
+  async createProduct(product) 
+  {
     const newProduct = product;
     // const newProducts = this.state.products.slice();
     // newProduct.id = this.state.products.length + 1;
@@ -150,15 +162,18 @@ class ProductList extends React.Component {
               _id
             }
           }`;
+
     await fetch(window.ENV.UI_API_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query }),
     });
+
     this.loadData();
   }
 
-  render() {
+  render() 
+  {
     const { products } = this.state;
     return (
       <div>
