@@ -2,6 +2,7 @@ body
 {
     font-family: Calibri, Times New Roman, serif;
     font-weight: bold;
+    background-color: blanchedalmond;
 }
 
 button
@@ -13,6 +14,7 @@ button
 table 
 {
     border-collapse: collapse;
+    background-color: bisque;
 }
   
 table, th, td 
@@ -32,6 +34,7 @@ select, input
     margin: 20px;
     font-family: Calibri, Times New Roman, serif;
     font-weight: bold;
+    background-color: antiquewhite;
 }
 
 label

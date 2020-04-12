@@ -20,6 +20,7 @@ const contentnode = document.getElementById('contents');
 
 ReactDOM.render(element, contentnode);
 
-if (module.hot) {
+if (module.hot) 
+{
   module.hot.accept();
 }

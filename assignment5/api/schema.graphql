@@ -1,15 +1,18 @@
-type Query{
+type Query
+{
     productList:[Product!]!
     product(id: Int!):Product!
 }
 
-type Mutation{
+type Mutation
+{
     productAdd(product:productInput!):Product!
     productUpdate(id: Int!, changes: productUpdateInputs!): Product! 
     productDelete(id: Int!): Boolean!
 }
 
-type Product {
+type Product 
+{
     _id: ID!
     id: Int!
 	Name: String!
@@ -18,22 +21,24 @@ type Product {
     Category: Category!
 }
 
-
-input productInput{
+input productInput
+{
     Name: String!
 	Price: Float
 	Image: String
     Category: Category!
 }
 
-input productUpdateInputs{
+input productUpdateInputs
+{
     Name: String!
 	Price: Float
 	Image: String
     Category: Category!
 }
 
-enum Category{
+enum Category
+{
     shirt
     jeans
     sweater

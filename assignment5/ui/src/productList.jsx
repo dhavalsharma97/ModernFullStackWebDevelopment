@@ -5,21 +5,24 @@ import React from 'react';
 import ProductTable from './productTable.jsx';
 import ProductAdd from './productAdd.jsx';
 
-export default class ProductList extends React.Component {
-  constructor() {
+export default class ProductList extends React.Component 
+{
+  constructor() 
+  {
     super();
     this.state = { products: [] };
     this.createProduct = this.createProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
   }
 
-
-  componentDidMount() {
+  componentDidMount() 
+  {
     document.forms.ProductAdd.price.value = '$';
     this.loadData();
   }
 
-  async loadData() {
+  async loadData() 
+  {
     const query = `query{
               productList{
                   id Name Price Image Category
@@ -35,7 +38,8 @@ export default class ProductList extends React.Component {
     this.setState({ products: result.data.productList });
   }
 
-  async createProduct(product) {
+  async createProduct(product) 
+  {
     const newProduct = product;
     const query = `mutation {
               productAdd(product:{
@@ -55,7 +59,8 @@ export default class ProductList extends React.Component {
     this.loadData();
   }
 
-  async deleteProduct(id) {
+  async deleteProduct(id) 
+  {
     const query = `mutation productDelete($id: Int!) {
       productDelete(id: $id)
     }`;
@@ -68,11 +73,12 @@ export default class ProductList extends React.Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, variables }),
     });
-    alert('Product deleted product successfully!');
+    alert('Deleted Successfully!');
     this.loadData();
   }
 
-  render() {
+  render() 
+  {
     const { products } = this.state;
     return (
       <div>

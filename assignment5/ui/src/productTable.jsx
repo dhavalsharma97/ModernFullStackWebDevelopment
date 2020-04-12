@@ -16,7 +16,8 @@ const ProductRow = withRouter(({ product, deleteProduct, index }) => (
   </tr>
 ));
 
-export default function ProductTable({ products, deleteProduct }) {
+export default function ProductTable({ products, deleteProduct }) 
+{
   const productRows = products.map(product => (
     <ProductRow
       key={product.id}

@@ -8,7 +8,8 @@ import ProductImg from './productImg.jsx';
 
 const NotFound = () => <h1>Page not found</h1>;
 
-export default function Contents() {
+export default function Contents() 
+{
   return (
     <Switch>
       <Redirect exact from="/" to="/products" />

@@ -1,13 +1,16 @@
 /* eslint linebreak-style: ["error","windows"] */
 import React from 'react';
 
-export default class ProductAdd extends React.Component {
-  constructor() {
+export default class ProductAdd extends React.Component 
+{
+  constructor() 
+  {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit(e) 
+  {
     e.preventDefault();
     const form = document.forms.ProductAdd;
     const product = {
@@ -24,7 +27,8 @@ export default class ProductAdd extends React.Component {
     form.image.value = '';
   }
 
-  render() {
+  render() 
+  {
     return (
       <div>
         <form name="ProductAdd" onSubmit={this.handleSubmit}>
@@ -48,12 +52,12 @@ export default class ProductAdd extends React.Component {
           </div>
           <div>
             <label htmlFor="product">
-              Product
+              Product Name
               <input type="text" name="product" />
             </label>
             <br />
             <label htmlFor="image">
-              image
+              Image URL
               <input type="text" name="image" />
             </label>
             <br />
