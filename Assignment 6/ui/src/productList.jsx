@@ -105,11 +105,11 @@ export default class ProductList extends React.Component {
     const { toastVisible, toastMessage, toastType } = this.state;
     return (
       <div>
-        <h1><Label>My Product Inventory</Label></h1>
+        <h1><Label>My Company Inventory</Label></h1>
         <br />
         <Panel>
           <Panel.Heading>
-            <Panel.Title>All available products</Panel.Title>
+            <Panel.Title>Showing all available products</Panel.Title>
           </Panel.Heading>
           <Panel.Body>
             <ProductTable products={products} deleteProduct={this.deleteProduct} />
@@ -117,7 +117,7 @@ export default class ProductList extends React.Component {
         </Panel>
         <Panel>
           <Panel.Heading>
-            <Panel.Title toggle>Add a new product</Panel.Title>
+            <Panel.Title toggle>Add a new product to inventory</Panel.Title>
           </Panel.Heading>
           <Panel.Body collapsible>
             <ProductAdd createProduct={this.createProduct} />
