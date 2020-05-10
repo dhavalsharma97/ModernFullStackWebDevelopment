@@ -1,7 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "Assignment-6",
+  "description": "Assignment-7",
   "main": "server.js",
   "scripts": {
     "start": "nodemon -e js,graphql -w . -w .env server.js",

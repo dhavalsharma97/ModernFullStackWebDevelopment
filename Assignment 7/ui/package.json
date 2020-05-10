@@ -1,7 +1,7 @@
 {
   "name": "ui",
   "version": "1.0.0",
-  "description": "Assignment-6",
+  "description": "Assignment-7",
   "main": "uiserver.js",
   "scripts": {
     "#start": "UI server. HMR is enabled in dev mode.",

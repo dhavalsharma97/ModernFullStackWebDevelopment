@@ -64,7 +64,6 @@ export default class ProductList extends React.Component {
     else {
       this.setState({ count: 0 });
     }
-    this.setState({ count: result.data.productCounts[0].count });
   }
 
   async createProduct(product) {
