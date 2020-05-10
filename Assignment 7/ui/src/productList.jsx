@@ -58,6 +58,12 @@ export default class ProductList extends React.Component {
       body: JSON.stringify({ query }),
     });
     const result = await response.json();
+    if (result.data.productCounts.length > 0) {
+      this.setState({ count: result.data.productCounts[0].count });
+    }
+    else {
+      this.setState({ count: 0 });
+    }
     this.setState({ count: result.data.productCounts[0].count });
   }
 
